@@ -2,6 +2,6 @@ import React from 'react';
 
 import './square.css';
 
-export default function Square() {
-  return <div className='square'></div>;
+export default function Square({ value }) {
+  return <div className='square'>{value}</div>;
 }
