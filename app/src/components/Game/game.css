@@ -1,0 +1,7 @@
+.game-board {
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    height: 100vh;
+    padding-top: 20px;
+}

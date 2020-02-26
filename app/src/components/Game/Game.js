@@ -1,14 +1,28 @@
 import React from 'react';
+
+import './game.css';
 import Square from '../Square/Square';
 
 export default function Game() {
   return (
     <div className='game-board'>
-      <Square />
+      <div className='game-row'>
+        <Square />
+        <Square />
+        <Square />
+      </div>
 
-      <Square />
+      <div className='game-row'>
+        <Square />
+        <Square />
+        <Square />
+      </div>
 
-      <Square />
+      <div className='game-row'>
+        <Square />
+        <Square />
+        <Square />
+      </div>
     </div>
   );
 }
