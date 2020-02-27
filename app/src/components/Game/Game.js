@@ -6,33 +6,41 @@ import Square from '../Square/Square';
 export default function Game() {
   const [squares, setSquares] = useState(Array(9).fill(null));
   const [nextPlayer, setNextPlayer] = useState(true);
+  const nextSymbol = nextPlayer ? 'X' : 'O';
 
-  const clickHandler = value => {
-    const updatedSquares = [...squares];
+  const renderSquare = index => (
+    <Square
+      value={squares[index]}
+      clickHandler={() => {
+        if (squares[index] === null) {
+          const newSquares = [...squares];
 
-    updatedSquares[value] = nextPlayer ? 'X' : 'O';
-    setSquares(updatedSquares);
-    setNextPlayer(!nextPlayer);
-  };
+          newSquares[index] = nextSymbol;
+          setSquares(newSquares);
+          setNextPlayer(!nextPlayer);
+        }
+      }}
+    />
+  );
 
   return (
     <div className='game-board'>
       <div className='game-row'>
-        <Square value={0} clickHandler={clickHandler} />
-        <Square value={1} clickHandler={clickHandler} />
-        <Square value={2} clickHandler={clickHandler} />
+        {renderSquare(0)}
+        {renderSquare(1)}
+        {renderSquare(2)}
       </div>
 
       <div className='game-row'>
-        <Square value={3} clickHandler={clickHandler} />
-        <Square value={4} clickHandler={clickHandler} />
-        <Square value={5} clickHandler={clickHandler} />
+        {renderSquare(3)}
+        {renderSquare(4)}
+        {renderSquare(5)}
       </div>
 
       <div className='game-row'>
-        <Square value={6} clickHandler={clickHandler} />
-        <Square value={7} clickHandler={clickHandler} />
-        <Square value={8} clickHandler={clickHandler} />
+        {renderSquare(6)}
+        {renderSquare(7)}
+        {renderSquare(8)}
       </div>
     </div>
   );
