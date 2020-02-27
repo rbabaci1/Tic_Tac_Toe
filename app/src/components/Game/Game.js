@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 
 import './game.css';
+import getWinner from '../helpers/getWinner';
+import restartGame from '../helpers/restartGame';
+
 import Square from '../Square/Square';
 import GameStatus from '../GameStatus/GameStatus';
-import getWinner from '../helpers/getWinner';
 
 export default function Game() {
   const [squares, setSquares] = useState(Array(9).fill(null));
@@ -49,6 +51,17 @@ export default function Game() {
       </div>
 
       <GameStatus winner={winner} nextSymbol={nextSymbol} />
+
+      <div className='restart-btn'>
+        <button
+          onClick={() => {
+            restartGame(setSquares);
+            setNextPlayer(true);
+          }}
+        >
+          Play again!
+        </button>
+      </div>
     </div>
   );
 }

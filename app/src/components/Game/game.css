@@ -8,3 +8,20 @@
     box-sizing: border-box;
     padding-top: 20px;
 }
+
+.restart-btn {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.restart-btn button {
+    font-size: 30px;
+    padding: 7px 30px;
+    border-radius: 3px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.restart-btn button:hover {
+    background: rgb(202, 200, 200);
+}
