@@ -1,7 +1,10 @@
+.game-wrapper {
+    height: 100vh;
+}
+
 .game-board {
     display: flex;
     justify-content: center;
     box-sizing: border-box;
-    height: 100vh;
     padding-top: 20px;
 }

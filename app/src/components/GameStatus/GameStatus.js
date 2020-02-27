@@ -1,5 +1,11 @@
 import React from 'react';
 
-export default function GameStatus() {
-  return <div></div>;
+import './gameStatus.css';
+
+export default function GameStatus({ winner, nextSymbol }) {
+  return (
+    <div className='game-status'>
+      {winner ? `${winner} Wins!` : `Next Player: ${nextSymbol}`}
+    </div>
+  );
 }
