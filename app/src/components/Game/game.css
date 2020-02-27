@@ -16,12 +16,12 @@
 
 .restart-btn button {
     font-size: 30px;
-    padding: 7px 30px;
+    padding: 6px 30px;
     border-radius: 3px;
     font-weight: 600;
     cursor: pointer;
 }
 
 .restart-btn button:hover {
-    background: rgb(202, 200, 200);
+    background: rgb(226, 223, 223);
 }

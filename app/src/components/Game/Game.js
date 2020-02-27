@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import './game.css';
 import getWinner from '../helpers/getWinner';
-import restartGame from '../helpers/restartGame';
+import RestartGame from '../helpers/restartGame';
 import isBoardFull from '../helpers/isBoardFull';
 
 import Square from '../Square/Square';
@@ -55,16 +55,7 @@ export default function Game() {
 
       <GameStatus winner={winner} nextSymbol={nextSymbol} draw={draw} />
 
-      <div className='restart-btn'>
-        <button
-          onClick={() => {
-            restartGame(setSquares);
-            setNextPlayer(true);
-          }}
-        >
-          Play again!
-        </button>
-      </div>
+      <RestartGame setNextPlayer={setNextPlayer} setSquares={setSquares} />
     </div>
   );
 }
