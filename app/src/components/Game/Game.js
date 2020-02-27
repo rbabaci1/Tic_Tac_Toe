@@ -8,7 +8,7 @@ import isBoardFull from '../helpers/isBoardFull';
 import Square from '../Square/Square';
 import GameStatus from '../GameStatus/GameStatus';
 
-export default function Game() {
+const Game = () => {
   const [squares, setSquares] = useState(Array(9).fill(null));
   const [nextPlayer, setNextPlayer] = useState(true);
 
@@ -19,9 +19,13 @@ export default function Game() {
   const renderSquare = index => (
     <Square
       value={squares[index]}
-      clickHandler={() => {
+      clickHandler={event => {
         if (!squares[index] && !winner) {
           const newSquares = [...squares];
+
+          nextSymbol === 'X'
+            ? (event.target.style = 'color: orange')
+            : (event.target.style = 'color: yellow');
 
           newSquares[index] = nextSymbol;
           setSquares(newSquares);
@@ -34,19 +38,19 @@ export default function Game() {
   return (
     <div className='game-wrapper'>
       <div className='game-board'>
-        <div className='game-row'>
+        <div>
           {renderSquare(0)}
           {renderSquare(1)}
           {renderSquare(2)}
         </div>
 
-        <div className='game-row'>
+        <div>
           {renderSquare(3)}
           {renderSquare(4)}
           {renderSquare(5)}
         </div>
 
-        <div className='game-row'>
+        <div>
           {renderSquare(6)}
           {renderSquare(7)}
           {renderSquare(8)}
@@ -55,7 +59,13 @@ export default function Game() {
 
       <GameStatus winner={winner} nextSymbol={nextSymbol} draw={draw} />
 
-      <RestartGame setNextPlayer={setNextPlayer} setSquares={setSquares} />
+      <RestartGame
+        setNextPlayer={setNextPlayer}
+        setSquares={setSquares}
+        squares={squares}
+      />
     </div>
   );
-}
+};
+
+export default Game;

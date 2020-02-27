@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function RestartGame({ setSquares, setNextPlayer }) {
+const RestartGame = ({ setSquares, setNextPlayer }) => {
   return (
     <div className='restart-btn'>
       <button
@@ -13,4 +13,6 @@ export default function RestartGame({ setSquares, setNextPlayer }) {
       </button>
     </div>
   );
-}
+};
+
+export default RestartGame;

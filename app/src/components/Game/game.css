@@ -25,3 +25,12 @@
 .restart-btn button:hover {
     background: rgb(226, 223, 223);
 }
+
+.restart-btn:focus {
+    outline: none;
+}
+
+.restart-btn button:active {
+    box-shadow: 3px 4px 5px 4px #424242;
+    transform: translateY(1px);
+}
