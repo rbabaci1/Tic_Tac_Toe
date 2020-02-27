@@ -20,3 +20,5 @@ const getWinner = squares => {
 
   return null;
 };
+
+export default getWinner;
