@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import './game.css';
 import getWinner from '../helpers/getWinner';
 import restartGame from '../helpers/restartGame';
+import isBoardFull from '../helpers/isBoardFull';
 
 import Square from '../Square/Square';
 import GameStatus from '../GameStatus/GameStatus';
@@ -10,8 +11,10 @@ import GameStatus from '../GameStatus/GameStatus';
 export default function Game() {
   const [squares, setSquares] = useState(Array(9).fill(null));
   const [nextPlayer, setNextPlayer] = useState(true);
+
   const nextSymbol = nextPlayer ? 'X' : 'O';
   const winner = getWinner(squares);
+  const draw = isBoardFull(squares);
 
   const renderSquare = index => (
     <Square
@@ -50,7 +53,7 @@ export default function Game() {
         </div>
       </div>
 
-      <GameStatus winner={winner} nextSymbol={nextSymbol} />
+      <GameStatus winner={winner} nextSymbol={nextSymbol} draw={draw} />
 
       <div className='restart-btn'>
         <button
