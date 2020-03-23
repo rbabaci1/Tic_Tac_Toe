@@ -18,12 +18,15 @@
     font-size: 30px;
     padding: 6px 30px;
     border-radius: 3px;
-    font-weight: 600;
+    font-weight: 500;
     cursor: pointer;
+    outline: none;
+    background-color: rgb(228, 174, 27);
+    border: none;
 }
 
 .restart-btn button:hover {
-    background: rgb(226, 223, 223);
+    background: rgb(190, 141, 5);
 }
 
 .restart-btn:focus {
@@ -31,6 +34,14 @@
 }
 
 .restart-btn button:active {
-    box-shadow: 3px 4px 5px 4px #424242;
+    box-shadow: 0px 4px 5px 4px #424242;
     transform: translateY(1px);
+}
+
+@media (max-width: 500px) {
+    .restart-btn button {
+        font-size: 26px;
+        border-radius: 0;
+        margin-top: 20px;
+    }
 }
